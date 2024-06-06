@@ -73,3 +73,25 @@ s = Sample.new
 s.new_methode_way(arg2: "arg2", arg1: 34, arg4: 55)
 
 s.poetry(43, key1: 1, key2: :value, key3: "string")
+
+# lesson 8
+
+def demo(arg1, arg2, *args_list)
+  puts arg1, arg2
+
+  if block_given?
+    args_list.each do |next_arg|
+      yield(next_arg) # do block from method
+    end
+  end
+end
+
+demo(20, 30) do
+  puts "block"
+end
+
+demo(2, 5)
+
+demo(32, 54, 55, 5, 5, 5) do |el|
+  puts el
+end
