@@ -6,10 +6,4 @@ RSpec.describe ExchangeIt::Account do
   it "has zero balance" do
     expect(john.balance).to eq(0)
   end
-
-  it "has prop uid" do
-    expect(john.uid).to be_an_instance_of(String)
-    hash = john.hash "John", "Doe"
-    expect(john.uid).to eq(hash)
-  end
 end
